@@ -1,4 +1,4 @@
-# bartholomewtran_portfolio
+# bartholomewtran - My Portfolio
 Hello all who visit!
 
 I am Bartholomew Tran, but you can call be Bart. I graduated from San Jose State University with a degree in Management Information Systems, and I’m passionate about IT, data analytics, and machine learning. I love working with Python (pandas, NumPy, scikit-learn) and MySQL to dig into data, automate tasks, and find insights that help make better business decisions. Right now, I’m also studying for AWS certification to learn more about cloud computing.
