@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bartholomew Tran's Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Enable smooth scrolling for anchor links */
+            scroll-behavior: smooth;
+            /* Optional: Add scroll snap for a more controlled full-page scroll experience */
+            scroll-snap-type: y mandatory;
+         
+        }
+
+        /* Adjust padding for sections to prevent content from being hidden by the fixed header */
+        section {
+            padding-top: 80px; /* Roughly the height of the header + some extra space */
+            padding-bottom: 40px;
+            scroll-snap-align: start; /* Align the start of the section to the viewport */
+        }
+
+        /* Ensure content is centered vertically within each full-height section */
+        .section-content-wrapper {
+            max-width: 1200px; /* Limit content width for readability */
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1rem; /* Add some padding inside the wrapper */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header Section - Fixed at the top -->
+    <header class="bg-blue-600 text-white p-4 shadow-md fixed w-full top-0 z-50 rounded-b-lg">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+            <h1 class="text-3xl font-bold mb-2 sm:mb-0">Bartholomew Tran</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#about" class="hover:underline text-lg">About</a></li>
+                    <li><a href="#projects" class="hover:underline text-lg">Projects</a></li>
+                    <li><a href="#contact" class="hover:underline text-lg">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Visual experience Section (will add animation)-->
+         <section id="intro" class="min-h-screen flex items-center justify-center bg-white">
+            <div class="section-content-wrapper bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold m4 text-blue-400">Welcome to my world</h2>
+            </div>
+         </section>
+        <!-- About Me Section -->
+        <section id="about" class="min-h-screen flex items-center justify-center bg-white">
+            <div class="section-content-wrapper bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold mb-4 text-blue-700">About Me</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    
+                    Hello all who visit!
+I am <span class="font-bold text-blue-800">Bartholomew Tran</span>, but you can call be Bart. I graduated from San Jose State University with a degree in Management Information Systems, 
+and I’m passionate about IT, data analytics, and machine learning. I love working with Python (pandas, NumPy, scikit-learn) and MySQL to dig into 
+data, automate tasks, and find insights that help make better business decisions. Right now, I’m also studying for AWS certification to learn more 
+about cloud computing. I speak English and Vietnamese fluently, and I’m actively learning Japanese. I’m hoping to find career opportunities in 
+Japan where I can put my skills to good use and keep learning new things. I’ve worked on data analytics projects and enjoy figuring out how to 
+make business processes better using data. Besides tech, I do some freelance portrait photography on the side, and in my free time I like checking 
+out new tech, building Gunpla, and playing sports like judo, badminton, tennis, and skiing in the winter. I also enjoy playing airsoft whenever I 
+get the chance.
+It's nice to meet you all, and I hope we can connect!
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    You can find more of my work and contributions on my <a href="https://github.com/bartholomewtran" target="_blank" class="text-blue-500 hover:underline font-medium">GitHub profile</a>.
+                    I'm always eager to learn new technologies and collaborate on exciting projects.
+                </p>
+                <div class="mt-6">
+                    <h3 class="text-xl font-semibold mb-3 text-green-600">Skills</h3>
+                    <ul class="flex flex-wrap gap-2 text-sm">
+                        <li class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full">HTML</li>
+                        <li class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full">CSS</li>
+                        <li class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full">JavaScript</li>
+                        <li class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full">React</li>
+                        <li class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full">Python</li>
+                        <li class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full">Git</li>
+                        <!-- Add more skills as needed -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="min-h-screen flex items-center justify-center bg-gray-50">
+            <div class="section-content-wrapper">
+                <h2 class="text-2xl font-semibold mb-8 text-purple-700 text-center">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Project Card 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-600">Project Alpha</h3>
+                        <p class="text-gray-600 mb-4">
+                            A brief description of your first project. Mention what it does, what technologies were used, and any interesting challenges or outcomes.
+                        </p>
+                        <a href="https://github.com/bartholomewtran/project-alpha-repo" target="_blank" class="text-blue-500 hover:underline font-medium block mb-2">View on GitHub</a>
+                        <button class="mt-2 bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out shadow-md">
+                            Live Demo
+                        </button>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-600">Project Beta</h3>
+                        <p class="text-gray-600 mb-4">
+                            Description of your second project. Highlight its features and your role in its development.
+                        </p>
+                        <a href="https://github.com/bartholomewtran/project-beta-repo" target="_blank" class="text-blue-500 hover:underline font-medium block mb-2">View on GitHub</a>
+                        <button class="mt-2 bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out shadow-md">
+                            Live Demo
+                        </button>
+                    </div>
+
+                    <!-- Project Card 3 (Add more as needed) -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-600">Project Gamma</h3>
+                        <p class="text-gray-600 mb-4">
+                            Brief overview of your third project. What problem did it solve? What did you learn?
+                        </p>
+                        <a href="https://github.com/bartholomewtran/project-gamma-repo" target="_blank" class="text-blue-500 hover:underline font-medium block mb-2">View on GitHub</a>
+                        <button class="mt-2 bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out shadow-md">
+                            Live Demo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="min-h-screen flex items-center justify-center bg-white">
+            <div class="section-content-wrapper bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold mb-4 text-red-700">Get in Touch</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    I'm always open to new opportunities and collaborations. Feel free to reach out!
+                </p>
+                <ul class="space-y-2">
+                    <li>
+                        <span class="font-semibold">Email:</span> <a href="mailto:your.email@example.com" class="text-blue-500 hover:underline">your.email@example.com</a>
+                    </li>
+                    <li>
+                        <span class="font-semibold">LinkedIn:</span> <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="text-blue-500 hover:underline">linkedin.com/in/yourprofile</a>
+                    </li>
+                    <li>
+                        <span class="font-semibold">GitHub:</span> <a href="https://github.com/bartholomewtran" target="_blank" class="text-blue-500 hover:underline">github.com/bartholomewtran</a>
+                    </li>
+                    <!-- Add other social links or a contact form link -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white p-4 rounded-t-lg">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Bartholomew Tran. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
