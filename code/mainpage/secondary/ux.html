@@ -46,16 +46,16 @@
         }
     </style>
 </head>
-<body class= "text-gray-800">
+<body class= "text-blue-800">
     <!-- Header Section - Fixed at the top -->
-    <header class="bg-blue-600 text-white p-4 shadow-md fixed w-full top-0 z-50 rounded-b-lg semi-transparent-box">
-        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center semi-transparent-box">
-            <h1 class="text-3xl font-bold mb-2 sm:mb-0">Bartholomew Tran</h1>
+    <header style="background: linear-gradient(to bottom, #ffffff 75%, rgba(96,200,250,0) 100%);" class="text-black py-8 px-4 fixed w-full top-0 z-100">
+        <div class="flex flex-col sm:flex-row justify-between items-center">
+            <!--<h1 class="text-3xl font-bold mb-2 sm:mb-0">Bartholomew Tran</h1> -->
             <nav>
                 <ul class="flex space-x-4">
                     <li><a href="#about" class="hover:underline text-lg">About</a></li>
-                    <li><a href="#projects" class="hover:underline text-lg">Projects</a></li>
-                    <li><a href="#contact" class="hover:underline text-lg">Contact</a></li>
+                    <li><a href="#Universes" class="hover:underline text-lg">Universes</a></li>
+                    <li><a href="#contact" class="hover:underline text-lg">Contact Me!</a></li>
                 </ul>
             </nav>
         </div>
@@ -65,8 +65,10 @@
     <main>
         <!-- Visual experience Section (will add animation)-->
          <section id="intro" class="min-h-screen flex items-center justify-center">
-            <div class="section-content-wrapper semi-transparent-box p-6 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-semibold m4 text-blue-400">Welcome to my world</h2>
+            <div class="section-content-wrapper p-6">
+                <h2 class="text-6xl font-semibold text-blue-50 bg-transparent" style="font-family: 'Times New Roman', Times, serif;">
+    Welcome to my world
+</h2>
             </div>
          </section>
         <!-- About Me Section -->
@@ -76,7 +78,9 @@
                 <p class="text-gray-700 leading-relaxed mb-4">
                     
                     Hello all who visit!
-I am <span class="font-bold text-blue-800">Bartholomew Tran</span>, but you can call be Bart. I graduated from San Jose State University with a degree in Management Information Systems, 
+I am <span class="font-bold text-blue-800">Bartholomew Tran</span>, but you can call be Bart,  and welcome to my world!
+
+I graduated from San Jose State University with a degree in Management Information Systems, 
 and I’m passionate about IT, data analytics, and machine learning. I love working with Python (pandas, NumPy, scikit-learn) and MySQL to dig into 
 data, automate tasks, and find insights that help make better business decisions. Right now, I’m also studying for AWS certification to learn more 
 about cloud computing. I speak English and Vietnamese fluently, and I’m actively learning Japanese. I’m hoping to find career opportunities in 
@@ -88,7 +92,7 @@ It's nice to meet you all, and I hope we can connect!
                 </p>
                 <p class="text-gray-700 leading-relaxed">
                     You can find more of my work and contributions on my <a href="https://github.com/bartholomewtran" target="_blank" class="text-blue-500 hover:underline font-medium">GitHub profile</a>.
-                    I'm always eager to learn new technologies and collaborate on exciting projects.
+                    Or, scroll down to learn more in detail! I'm always eager to learn new technologies and collaborate on exciting projects.
                 </p>
                 <div class="mt-6">
                     <h3 class="text-xl font-semibold mb-3 text-green-600">Skills</h3>
@@ -106,44 +110,42 @@ It's nice to meet you all, and I hope we can connect!
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="min-h-screen flex items-center justify-center">
-            <div class="section-content-wrapper semi-transparent-box">
-                <h2 class="text-2xl font-semibold mb-8 text-purple-700 text-center">My Projects</h2>
+        <section id="Universes" class="min-h-screen flex items-center justify-center">
+            <div class="section-content-wrapper semi-transparent-box rounded-lg">
+                <h2 class="text-2xl font-semibold mb-8 text-purple-700 text-center">My Universes
+                </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Project Card 1 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <h3 class="text-xl font-semibold mb-3 text-purple-600">Project Alpha</h3>
+                        <h3 class="text-xl font-semibold mb-3 text-yellow-600">Academia</h3>
                         <p class="text-gray-600 mb-4">
-                            A brief description of your first project. Mention what it does, what technologies were used, and any interesting challenges or outcomes.
+                            Explore my academic career, including relevant skillsets that I have obtained. Maybe something will pique your interest?
                         </p>
-                        <a href="https://github.com/bartholomewtran/project-alpha-repo" target="_blank" class="text-blue-500 hover:underline font-medium block mb-2">View on GitHub</a>
-                        <button class="mt-2 bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out shadow-md">
-                            Live Demo
-                        </button>
+                        <a href="academia.html" class="mt-2 bg-blue-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out shadow-md inline-block text-center">
+        Proceed
+    </a>
                     </div>
 
                     <!-- Project Card 2 -->
                     <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <h3 class="text-xl font-semibold mb-3 text-purple-600">Project Beta</h3>
+                        <h3 class="text-xl font-semibold mb-3 text-red-600">Profession</h3>
                         <p class="text-gray-600 mb-4">
-                            Description of your second project. Highlight its features and your role in its development.
+                            In this rapidly-changing world, I adapt even more rapidly. Experience my life as a professional in this high-tech world, learning from my origins to my current quests.
                         </p>
-                        <a href="https://github.com/bartholomewtran/project-beta-repo" target="_blank" class="text-blue-500 hover:underline font-medium block mb-2">View on GitHub</a>
-                        <button class="mt-2 bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out shadow-md">
-                            Live Demo
-                        </button>
+                        <a href="profession.html" class="mt-2 bg-blue-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out shadow-md inline-block text-center">
+        Proceed
+    </a>
                     </div>
 
                     <!-- Project Card 3 (Add more as needed) -->
                     <div class="bg-white p-6 rounded-lg shadow-lg">
-                        <h3 class="text-xl font-semibold mb-3 text-purple-600">Project Gamma</h3>
+                        <h3 class="text-xl font-semibold mb-3 text-blue-600">The Arts</h3>
                         <p class="text-gray-600 mb-4">
-                            Brief overview of your third project. What problem did it solve? What did you learn?
+                            Discover my creative side through my activities outside of academia and off the clock. Hopefully you will find something relatable!
                         </p>
-                        <a href="https://github.com/bartholomewtran/project-gamma-repo" target="_blank" class="text-blue-500 hover:underline font-medium block mb-2">View on GitHub</a>
-                        <button class="mt-2 bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out shadow-md">
-                            Live Demo
-                        </button>
+                        <a href="arts.html" class="mt-2 bg-blue-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out shadow-md inline-block text-center">
+        Proceed
+    </a>
                     </div>
                 </div>
             </div>
@@ -152,9 +154,9 @@ It's nice to meet you all, and I hope we can connect!
         <!-- Contact Section -->
         <section id="contact" class="min-h-screen flex items-center justify-center">
             <div class="section-content-wrapper semi-transparent-box p-6 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-semibold mb-4 text-red-700">Get in Touch</h2>
+                <h2 class="text-2xl font-semibold mb-4 text-green-700">Get in Touch</h2>
                 <p class="text-gray-700 leading-relaxed mb-4">
-                    I'm always open to new opportunities and collaborations. Feel free to reach out!
+                    I'm always open to new opportunities and to learn more about you. Feel free to reach out!
                 </p>
                 <ul class="space-y-2">
                     <li>
@@ -182,6 +184,27 @@ It's nice to meet you all, and I hope we can connect!
             </div>
         </div>
     </footer>
-
+    <script src="https://unpkg.com/scrollreveal"></script>
+<script>
+    ScrollReveal().reveal('.section-content-wrapper', {
+        distance: '50px',
+        duration: 800,
+        easing: 'ease-in-out',
+        origin: 'bottom',
+        interval: 200,
+        reset: false
+    });
+</script>
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
 </body>
 </html>
