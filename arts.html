@@ -18,13 +18,36 @@
             margin: 0 auto;
             padding: 20px;
         }
+                .typing-text {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: .15em solid rgb(0, 0, 0); /* Blinking cursor */
+            animation: 
+                typing 2s steps(40, end),
+                blinking 1s infinite steps(1);
+            display: inline-block; /* <-- Add this line */
+        }
 
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blinking {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(0, 0, 0) }
+}
+        header {
+    background: linear-gradient(to bottom, #ffffff 80%, rgba(224, 231, 255, 0));
+    opacity: 1 !important;
+    z-index: 1000;
+}
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
     <section id="intro" class="min-h-screen flex items-center justify-center">
         <div class="section-content-wrapper p-6">
-            <h2 class="text-2xl font-semibold m4 text-blue-300 bg-transparent">The Arts</h2>
+            <h2 class="text-6xl typing-text font-semibold text-black bg-transparent" style="font-family: 'Times New Roman', Times, serif;">The Arts</h2>
         </div>
     </section>
 
