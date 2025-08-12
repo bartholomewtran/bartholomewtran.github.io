@@ -12,27 +12,194 @@
             font-family: 'Inter', sans-serif;
             /* Enable smooth scrolling for anchor links */
             scroll-behavior: smooth;
+
+            /* Set the background image and properties */
+            /* background-image: url('https://mandatedmemoranda.com/wp-content/uploads/2013/11/clouds-3_5.jpg');  use as backup*/
+            background-image: url('_DSC2401.jpg');
+            background-size: cover;
+            background-position: center;
+            /*background-attachment: fixed; */
         }
+        
         .section-content-wrapper {
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
+        .semi-transparent-box {
+            background-color: rgba(255, 255, 255, 0.70); /* white with 50% opacity */
+            padding: 20px;
+            color: white; /* Text color for readability */
+            
+        }
+        .typing-text {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: .15em solid rgb(0, 0, 0); /* Blinking cursor */
+            animation: 
+                typing 2s steps(40, end),
+                blinking 1s infinite steps(1);
+            display: inline-block; /* <-- Add this line */
+        }
+        .cd-timeline {
+  position: relative;
+  padding: 2em 0;
+}
+
+.cd-timeline__container {
+  position: relative;
+  margin: 0 auto;
+  padding: 2em 0;
+  width: 90%;
+  max-width: 800px;
+}
+
+.cd-timeline__block {
+  display: flex;
+  margin-bottom: 2em;
+  align-items: flex-start;
+}
+
+.cd-timeline__img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #6d28d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2em;
+  flex-shrink: 0;
+}
+
+.cd-timeline__img img {
+  width: 40px;
+  height: 40px;
+}
+
+.cd-timeline__content {
+  background: #fff;
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  flex: 1;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+    }
+
+@keyframes blinking {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(92, 163, 76) }
+    }
+
+
+@keyframes cd-bounce-1 {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        }
+    60% {
+        opacity: 1;
+        transform: scale(1.2);
+        }
+    100% {
+        transform: scale(1);    
+        }
+    }
+
+
 
     </style>
 </head>
+
+<script>
+    function VerticalTimeline( element ) {
+    this.element = element;
+    this.blocks = this.element.getElementsByClassName("cd-timeline__block");
+    this.images = this.element.getElementsByClassName("cd-timeline__img");
+    this.contents = this.element.getElementsByClassName("cd-timeline__content");
+    // ..
+    };
+
+    VerticalTimeline.prototype.showBlocks = function() {
+    var self = this;
+    for( var i = 0; i < this.blocks.length; i++) {
+        (function(i){
+            if( self.contents[i].classList.contains("cd-timeline__content--hidden") && self.blocks[i].getBoundingClientRect().top <= window.innerHeight*self.offset ) {
+                // add bounce-in animation
+                self.images[i].classList.add("cd-timeline__img--bounce-in");
+                self.contents[i].classList.add("cd-timeline__content--bounce-in");
+                self.images[i].classList.remove("cd-timeline__img--hidden");
+                self.contents[i].classList.remove("cd-timeline__content--hidden");
+            }
+        })(i);
+    }
+    };
+</script>
+
+
 <body class="bg-gray-100 text-gray-800">
-    <section id="intro" class="min-h-screen flex items-center justify-center">
+    <section id="intro" class="min-h-screen flex flex-col items-center justify-center">
         <div class="section-content-wrapper p-6">
-            <h2 class="text-2xl font-semibold m4 text-blue-300 bg-transparent">Academia</h2>
+            <h2 class="text-5xl font-semibold m4 text-orange-200 bg-transparent typing-text" style="font-family: 'Times New Roman', Times, serif;">
+                Academia
+            </h2>
         </div>
     </section>
 
-    <section id="academia" class="min-h-screen flex items-center justify-center">
-        <div class="section-content-wrapper p-6 rounded-lg shadow-lg">
-            <h2 class="text-4xl font-semibold text-blue-100 bg-transparent">Academia</h2>
-            <p class="mt-4 text-lg">This section is under construction. Stay tuned for updates!</p>
+<section class="cd-timeline js-cd-timeline">
+  <div class="container max-width-lg cd-timeline__container">
+
+
+    <!-- Block 1: High School-->
+    <div class="cd-timeline__block">
+      <div class="cd-timeline__img cd-timeline__img--picture">
+        <img src="STHSlogo.jpg" alt="Picture">
+      </div> <!-- cd-timeline__img -->
+
+      <div class="cd-timeline__content text-component">
+        <h>Community College: Mission College</h>
+        
+        <div class="flex justify-between items-center">
+          <span class="cd-timeline__date">August 2020 - May 2022</span>
+          <!--<a href="#0" class="btn btn--subtle">Read more</a> --> 
         </div>
-    </section>
+        <p class="text-gray-700 leading-relaxed mb-4">Thus started my higher-education career.</p>
+        <h3> Educational milestones</h3>
+        <ul class="list-disc pl-6">
+            <li>Graduated with a GPA of 3.93</li>
+            <li>Obtained an Associates of Science for Transfer (AS-T) in Business Administration</li>
+            <li>Obtained a minor in economics</li>
+            <li>Learned business concepts like accounting, business law, and management </li>
+            <li>Learned technical skills like MySQL and Python</li>
+            <li>Studied Microsoft Excel in-depth</li>
+      </div> <!-- cd-timeline__content -->
+    </div> <!-- End High School block -->
+
+    <div class="cd-timeline__block">
+      <div class="cd-timeline__img cd-timeline__img--picture">
+        <img src="STHSlogo.jpg" alt="Picture">
+      </div> <!-- cd-timeline__img -->
+
+      <div class="cd-timeline__content text-component">
+        <h>High School: Santa Teresa High School (STHS)</h>
+        
+        <div class="flex justify-between items-center">
+          <span class="cd-timeline__date">August 2016 - June 2020</span>
+          <!--<a href="#0" class="btn btn--subtle">Read more</a> --> 
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">Embarked on pathway to STEM.</p>
+        <h3> Educational milestones</h3>
+        <ul class="list-disc pl-6">
+            <li>Graduated with a GPA of 3.67</li>
+            <li>Completed AP Physics 1 and 2</li>
+            <li>Completed AP Calculus AB and AP Calculus BC</li>
+            <li>Member of the mechanical team of STHS Robotics </li>
+            <li>Member of the STMESA (Santa Teresa Math Engineering Science Achievement)</li>
+      </div> <!-- cd-timeline__content -->
+  </div>
+</section> <!-- cd-timeline -->
 </body>
 </html>
