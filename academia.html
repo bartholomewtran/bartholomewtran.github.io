@@ -15,7 +15,7 @@
 
             /* Set the background image and properties */
             /* background-image: url('https://mandatedmemoranda.com/wp-content/uploads/2013/11/clouds-3_5.jpg');  use as backup*/
-            background-image: url('_DSC2401.jpg');
+            background-image: url('_DSC5815-1.jpg');
             background-size: cover;
             background-position: center;
             /*background-attachment: fixed; */
@@ -58,14 +58,14 @@
   display: flex;
   align-items: flex-start;
   margin-bottom: 2em;
-  width: 100%;
+  width: 85%;
 }
 
 .cd-timeline__img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #6d28d9;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,18 +142,26 @@
 
 
 <body class="bg-gray-100 text-gray-800">
-    <section id="intro" class="min-h-screen flex flex-col items-center justify-center">
-        <div class="section-content-wrapper p-6">
-            <h2 class="text-5xl font-semibold m4 text-orange-200 bg-transparent typing-text" style="font-family: 'Times New Roman', Times, serif;">
-                Academia
-            </h2>
-        </div>
-    </section>
+
+  <section id="intro" class="min-h-screen flex flex-col items-center justify-center">
+    <div class="section-content-wrapper p-6">
+      <h2 class="text-5xl font-semibold m4 text-orange-200 bg-transparent typing-text" style="font-family: 'Times New Roman', Times, serif;">
+        Academia
+      </h2>
+    </div>
+    <!-- Floating scroll button at bottom center -->
+    <button onclick="scrollToAcademia()" 
+      class="fixed bottom-8 left-1/2 transform -translate-x-1/2 px-6 py-3 bg-orange-400 hover:bg-orange-500 text-white font-semibold rounded-full shadow-lg transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-300 z-50">
+      ↓ Scroll to Content
+    </button>
+    </div>
+  </section>
 
     <section id="academia" class="min-h-screen flex items-center justify-center">
-        <div class="section-content-wrapper p-6 rounded-lg shadow-lg semi-transparent-box">
+        <div class="section-content-wrapper p-4 rounded-lg shadow-lg semi-transparent-box">
             <h2 class="text-4xl font-semibold text-black bg-transparent">My Academic Journey</h2>
             <p class="mt-4 text-lg text-black">Here's a timeline of my educational background and achievements.</p>
+            <img src="graduation.jpeg" alt="Graduation" class="mt-5 rounded-lg shadow-lg">
         </div>
 
 <!-- Timeline section remains the same -->
@@ -232,4 +240,12 @@
   </div><!-- End High School block -->
 </section> <!-- cd-timeline -->
 </body>
+<script>
+  function scrollToAcademia() {
+    const academiaSection = document.getElementById('academia');
+    if (academiaSection) {
+      academiaSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+</script>
 </html>
