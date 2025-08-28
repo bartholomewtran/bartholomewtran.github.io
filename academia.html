@@ -24,7 +24,7 @@
         .section-content-wrapper {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 20px 40px; /* 40px left and right */
         }
         .semi-transparent-box {
             background-color: rgba(255, 255, 255, 0.70); /* white with 50% opacity */
@@ -44,20 +44,21 @@
         .cd-timeline {
   position: relative;
   padding: 2em 0;
+  overflow-x: visible;
+  white-space: normal;
+  padding-left: 40px;   /* Add left padding */
+  padding-right: 40px;  /* Add right padding */
 }
 
 .cd-timeline__container {
-  position: relative;
-  margin: 0 auto;
-  padding: 2em 0;
-  width: 90%;
-  max-width: 800px;
+  display: block;
 }
 
 .cd-timeline__block {
   display: flex;
-  margin-bottom: 2em;
   align-items: flex-start;
+  margin-bottom: 2em;
+  width: 100%;
 }
 
 .cd-timeline__img {
@@ -149,14 +150,42 @@
         </div>
     </section>
 
+    <section id="academia" class="min-h-screen flex items-center justify-center">
+        <div class="section-content-wrapper p-6 rounded-lg shadow-lg semi-transparent-box">
+            <h2 class="text-4xl font-semibold text-black bg-transparent">My Academic Journey</h2>
+            <p class="mt-4 text-lg text-black">Here's a timeline of my educational background and achievements.</p>
+        </div>
+
+<!-- Timeline section remains the same -->
 <section class="cd-timeline js-cd-timeline">
   <div class="container max-width-lg cd-timeline__container">
-
-
-    <!-- Block 1: High School-->
-    <div class="cd-timeline__block">
+    <div class="cd-timeline__block"> <!-- Block 2: University -->
       <div class="cd-timeline__img cd-timeline__img--picture">
-        <img src="STHSlogo.jpg" alt="Picture">
+        <img src="Mission_College_Logo.jpg" alt="Picture">
+      </div> <!-- cd-timeline__img -->
+
+      <div class="cd-timeline__content text-component">
+        <h>San Jose State University</h>
+        
+        <div class="flex justify-between items-center">
+          <span class="cd-timeline__date">August 2022 - May 2024</span>
+          <!--<a href="#0" class="btn btn--subtle">Read more</a> --> 
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-4">The ending of a chapter, and the beginning of another.</p>
+        <h3> Educational milestones</h3>
+        <ul class="list-disc pl-6">
+            <li>Graduated with a GPA of 3.67.</li>
+            <li>Obtained an Bachelors of Science in Management Information Systems.</li>
+            <li>Learned technical skills like data analytics, programming, and software development. </li>
+            <li>Practiced development concepts like Agile methodologies and SCRUM.</li>
+            <li>Explored cloud computing, IT, and machine-learning.</li>
+      </div> <!-- cd-timeline__content -->
+    </div> <!-- End CC block -->
+
+    
+    <div class="cd-timeline__block"> <!-- Block 2: CC -->
+      <div class="cd-timeline__img cd-timeline__img--picture">
+        <img src="Mission_College_Logo.jpg" alt="Picture">
       </div> <!-- cd-timeline__img -->
 
       <div class="cd-timeline__content text-component">
@@ -176,8 +205,9 @@
             <li>Learned technical skills like MySQL and Python</li>
             <li>Studied Microsoft Excel in-depth</li>
       </div> <!-- cd-timeline__content -->
-    </div> <!-- End High School block -->
+    </div> <!-- End CC block -->
 
+    <!-- Block 1: High School-->
     <div class="cd-timeline__block">
       <div class="cd-timeline__img cd-timeline__img--picture">
         <img src="STHSlogo.jpg" alt="Picture">
@@ -193,13 +223,13 @@
         <p class="text-gray-700 leading-relaxed mb-4">Embarked on pathway to STEM.</p>
         <h3> Educational milestones</h3>
         <ul class="list-disc pl-6">
-            <li>Graduated with a GPA of 3.67</li>
+            <li>Graduated with a GPA of 3.65</li>
             <li>Completed AP Physics 1 and 2</li>
             <li>Completed AP Calculus AB and AP Calculus BC</li>
             <li>Member of the mechanical team of STHS Robotics </li>
             <li>Member of the STMESA (Santa Teresa Math Engineering Science Achievement)</li>
       </div> <!-- cd-timeline__content -->
-  </div>
+  </div><!-- End High School block -->
 </section> <!-- cd-timeline -->
 </body>
 </html>
