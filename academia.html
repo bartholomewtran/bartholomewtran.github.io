@@ -92,7 +92,7 @@
 
 @keyframes blinking {
     from, to { border-color: transparent }
-    50% { border-color: rgb(92, 163, 76) }
+    50% { border-color: rgb(0, 0, 0) }
     }
 
 
@@ -145,31 +145,32 @@
 
   <section id="intro" class="min-h-screen flex flex-col items-center justify-center">
     <div class="section-content-wrapper p-6">
-      <h2 class="text-5xl font-semibold m4 text-orange-200 bg-transparent typing-text" style="font-family: 'Times New Roman', Times, serif;">
+      <h2 class="text-5xl font-semibold m4 text-yellow-300 bg-transparent typing-text" style="font-family: 'Times New Roman', Times, serif;">
         Academia
       </h2>
     </div>
     <!-- Floating scroll button at bottom center -->
-    <button onclick="scrollToAcademia()" 
-      class="fixed bottom-8 left-1/2 transform -translate-x-1/2 px-6 py-3 bg-orange-400 hover:bg-orange-500 text-white font-semibold rounded-full shadow-lg transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-300 z-50">
+    <button onclick="scrollToAcademia()"
+      class="fixed bottom-8 left-1/2 transform -translate-x-1/2 px-6 py-3 bg-gray-400 hover:bg-gray-200 text-white font-semibold rounded-full shadow-lg transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-300 z-50"
+      style="font-family: 'Times New Roman', Times, serif;">
       ↓ Scroll to Content
     </button>
     </div>
   </section>
 
-    <section id="academia" class="min-h-screen flex items-center justify-center">
-        <div class="section-content-wrapper p-4 rounded-lg shadow-lg semi-transparent-box">
-            <h2 class="text-4xl font-semibold text-black bg-transparent">My Academic Journey</h2>
-            <p class="mt-4 text-lg text-black">Here's a timeline of my educational background and achievements.</p>
-            <img src="graduation.jpeg" alt="Graduation" class="mt-5 rounded-lg shadow-lg">
-        </div>
-
-<!-- Timeline section remains the same -->
-<section class="cd-timeline js-cd-timeline">
-  <div class="container max-width-lg cd-timeline__container">
+  <section id="academia" class="min-h-screen flex flex-row items-start justify-center gap-8">
+    <!-- Photo/intro block -->
+  <div class="section-content-wrapper p-8 rounded-lg shadow-lg semi-transparent-box max-w-xl flex-shrink-0" style="margin-top:2em;">
+      <h2 class="text-4xl font-semibold text-black bg-transparent">My Academic Journey</h2>
+      <p class="mt-4 text-lg text-black">Here's a timeline of my educational background and achievements.</p>
+      <img src="graduation.jpeg" alt="Graduation" class="mt-5 rounded-lg shadow-lg">
+    </div>
+    <!-- Timeline block -->
+    <section class="cd-timeline js-cd-timeline flex-1">
+      <div class="container max-width-lg cd-timeline__container">
     <div class="cd-timeline__block"> <!-- Block 2: University -->
       <div class="cd-timeline__img cd-timeline__img--picture">
-        <img src="Mission_College_Logo.jpg" alt="Picture">
+        <img src="SJSU_Seal_San_Jose_State_University.png" alt="Picture">
       </div> <!-- cd-timeline__img -->
 
       <div class="cd-timeline__content text-component">
