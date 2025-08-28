@@ -47,7 +47,7 @@
   overflow-x: visible;
   white-space: normal;
   padding-left: 40px;   /* Add left padding */
-  padding-right: 40px;  /* Add right padding */
+  padding-right: 20px;  /* Reduced right padding to match photo block */
 }
 
 .cd-timeline__container {
@@ -158,16 +158,17 @@
     </div>
   </section>
 
-  <section id="academia" class="min-h-screen flex flex-row items-start justify-center gap-8">
-    <!-- Photo/intro block -->
-  <div class="section-content-wrapper p-8 rounded-lg shadow-lg semi-transparent-box max-w-xl flex-shrink-0" style="margin-top:2em;">
-      <h2 class="text-4xl font-semibold text-black bg-transparent">My Academic Journey</h2>
-      <p class="mt-4 text-lg text-black">Here's a timeline of my educational background and achievements.</p>
-      <img src="graduation.jpeg" alt="Graduation" class="mt-5 rounded-lg shadow-lg">
-    </div>
-    <!-- Timeline block -->
-    <section class="cd-timeline js-cd-timeline flex-1">
-      <div class="container max-width-lg cd-timeline__container">
+  <section id="academia" class="min-h-screen w-full flex justify-center items-start">
+    <div class="flex flex-row gap-8 w-full max-w-6xl mx-auto">
+      <!-- Photo/intro block -->
+      <div class="section-content-wrapper p-8 rounded-lg shadow-lg semi-transparent-box max-w-xl flex-shrink-0" style="margin-top:2em; padding-left:40px; height:fit-content; display:flex; flex-direction:column; justify-content:flex-start;">
+        <h2 class="text-4xl font-semibold text-black bg-transparent">My Academic Journey</h2>
+        <p class="mt-4 text-lg text-black">Here's a timeline of my educational background and achievements.</p>
+        <img src="graduation.jpeg" alt="Graduation" class="mt-5 mb-0 rounded-lg shadow-lg">
+      </div>
+      <!-- Timeline block -->
+      <section class="cd-timeline js-cd-timeline flex-1">
+        <div class="container max-width-lg cd-timeline__container">
     <div class="cd-timeline__block"> <!-- Block 2: University -->
       <div class="cd-timeline__img cd-timeline__img--picture">
         <img src="SJSU_Seal_San_Jose_State_University.png" alt="Picture">
