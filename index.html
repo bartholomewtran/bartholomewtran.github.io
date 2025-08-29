@@ -8,6 +8,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 1;
+            animation: fadeBg 5s 3s ease forwards;
+        }
+        @keyframes fadeBg {
+            to { opacity: 0; }
+        }
         body {
             font-family: 'Inter', sans-serif;
             /* Enable smooth scrolling for anchor links */
@@ -64,34 +80,61 @@
     from, to { border-color: transparent }
     50% { border-color: rgb(255, 255, 255) }
 }
-        header {
-    background: linear-gradient(to bottom, #243126 10%, rgba(224, 231, 255, 0));
-    opacity: 1 !important;
-    z-index: 1000;
-}
+                    header { 
+                            background: linear-gradient(to bottom, #243126 10%, rgba(224, 231, 255, 0)); 
+                            opacity: 1 !important; 
+                            z-index: 1000; 
+                    } 
+            </style>
+            <script>
+                // Lock scrolling until fade animation ends
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Lock scroll and compensate for scrollbar
+                    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+                    document.body.style.overflow = 'hidden';
+                    var header = document.querySelector('header');
+                    if (scrollBarWidth > 0) {
+                        document.body.style.paddingRight = scrollBarWidth + 'px';
+                        if (header) header.style.paddingRight = scrollBarWidth + 'px';
+                    }
+                    setTimeout(function() {
+                        document.body.style.overflow = '';
+                        document.body.style.paddingRight = '';
+                        if (header) header.style.paddingRight = '';
+                    }, 1800); // 1.5s animation + 0.3s delay = 1.8s
+                });
+            </script>
+            <!-- Removed duplicate/old fade overlay styles -->
+            </head>
+            <body>
+                    <!-- Header Section - Fixed at the top -->
+                <header class="fixed w-full top-0 left-0 z-80 bg-gradient-to-b from-blue-500 to-transparent text-white">
+                        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center py-4 px-6">
+                            <div class="flex items-center space-x-4">
+                                <!-- Optional: Add a logo or site title here -->
+                                <span class="text-2xl font-bold tracking-wide hidden sm:inline">Bartholomew Tran</span>
+                            </div>
+                            <nav>
+                                <ul class="flex space-x-6 mt-2 sm:mt-0">
+                                    <li><a href="#about" class="hover:underline hover:bg-blue-300 hover:text-white text-lg border-2 border-blue-200 rounded-full px-4 py-2 transition duration-200">About</a></li>
+                                    <li><a href="#Universes" class="hover:underline hover:bg-blue-300 hover:text-white text-lg border-2 border-blue-200 rounded-full px-4 py-2 transition duration-200">Universes</a></li>
+                                    <li><a href="#contact" class="hover:underline hover:bg-blue-300 hover:text-white text-lg border-2 border-blue-200 rounded-full px-4 py-2 transition duration-200">Contact Me!</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </header>
+    
+                    <!-- Main Content Section -->
+                    <main>
     </style>
-</head>
-<body class= "text-blue-800">
-    <!-- Header Section - Fixed at the top -->
-    <header class="text-white py-8 px-4 fixed w-full top-0">
-        <div class="flex flex-col sm:flex-row justify-between items-center">
-            <!--<h1 class="text-3xl font-bold mb-2 sm:mb-0">Bartholomew Tran</h1> -->
-            <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="#about" class="hover:underline text-lg">About</a></li>
-                    <li><a href="#Universes" class="hover:underline text-lg">Universes</a></li>
-                    <li><a href="#contact" class="hover:underline text-lg">Contact Me!</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- Removed duplicate/old fade overlay styles -->
 
     <!-- Main Content Section -->
     <main>
         <!-- Visual experience Section (will add animation)-->
          <section id="intro" class="min-h-screen flex items-center justify-center">
             <div class="section-content-wrapper p-6">
-                <h2 class="text-6xl typing-text font-semibold text-white bg-transparent" style="font-family: 'Times New Roman', Times, serif;">
+                <h2 class="text-6xl typing-text font-semibold text-blue-200 bg-transparent" style="font-family: 'Times New Roman', Times, serif;">
     Welcome to my world...
 </h2>
             </div>
@@ -229,6 +272,17 @@ It's nice to meet you all, and I hope we can connect!
                 target.scrollIntoView({ behavior: 'smooth' });
             }
         });
+    });
+</script>
+<script>
+    // Fade out the white overlay on page load
+    window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            document.getElementById('fade-overlay').classList.add('fade-out');
+        }, 300); // slight delay for effect
+        setTimeout(function() {
+            document.getElementById('fade-overlay').style.display = 'none';
+        }, 1800); // remove from DOM after fade
     });
 </script>
 </body>

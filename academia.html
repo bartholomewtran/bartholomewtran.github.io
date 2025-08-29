@@ -8,6 +8,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+      body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 1;
+            animation: fadeBg 5s 3s ease forwards;
+        }
+        @keyframes fadeBg {
+            to { opacity: 0; }
+        }
         body {
             font-family: 'Inter', sans-serif;
             /* Enable smooth scrolling for anchor links */
@@ -28,7 +44,7 @@
         }
         .semi-transparent-box {
             background-color: rgba(255, 255, 255, 0.70); /* white with 50% opacity */
-            padding: 20px;
+            padding: 10px;
             color: white; /* Text color for readability */
             
         }
@@ -47,7 +63,7 @@
   overflow-x: visible;
   white-space: normal;
   padding-left: 40px;   /* Add left padding */
-  padding-right: 20px;  /* Reduced right padding to match photo block */
+  padding-right: 10px;  /* Reduced right padding to match photo block */
 }
 
 .cd-timeline__container {
@@ -62,20 +78,20 @@
 }
 
 .cd-timeline__img {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 2em;
+  margin-right: 0.5em;
   flex-shrink: 0;
 }
 
 .cd-timeline__img img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
 }
 
 .cd-timeline__content {
@@ -112,7 +128,24 @@
 
 
 
-    </style>
+  </style>
+  <script>
+    // Lock scrolling until fade animation ends (matches index.html)
+    document.addEventListener('DOMContentLoaded', function() {
+      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = 'hidden';
+      var header = document.querySelector('header');
+      if (scrollBarWidth > 0) {
+        document.body.style.paddingRight = scrollBarWidth + 'px';
+        if (header) header.style.paddingRight = scrollBarWidth + 'px';
+      }
+      setTimeout(function() {
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+        if (header) header.style.paddingRight = '';
+      }, 4000); // 1.5s animation + 0.3s delay = 1.8s
+    });
+  </script>
 </head>
 
 <script>
@@ -159,16 +192,16 @@
   </section>
 
   <section id="academia" class="min-h-screen w-full flex justify-center items-start">
-    <div class="flex flex-row gap-8 w-full max-w-6xl mx-auto">
+  <div class="flex flex-row w-full" style="padding-left:80px; padding-right:0;">
       <!-- Photo/intro block -->
-      <div class="section-content-wrapper p-8 rounded-lg shadow-lg semi-transparent-box max-w-xl flex-shrink-0" style="margin-top:2em; padding-left:40px; height:fit-content; display:flex; flex-direction:column; justify-content:flex-start;">
+  <div class="section-content-wrapper p-8 rounded-lg shadow-lg semi-transparent-box max-w-xl flex-shrink-0" style="margin-top:2em; padding-left:40px; padding-right:40px; height:fit-content; display:flex; flex-direction:column; justify-content:flex-start;">
         <h2 class="text-4xl font-semibold text-black bg-transparent">My Academic Journey</h2>
         <p class="mt-4 text-lg text-black">Here's a timeline of my educational background and achievements.</p>
         <img src="graduation.jpeg" alt="Graduation" class="mt-5 mb-0 rounded-lg shadow-lg">
       </div>
       <!-- Timeline block -->
-      <section class="cd-timeline js-cd-timeline flex-1">
-        <div class="container max-width-lg cd-timeline__container">
+  <section class="cd-timeline js-cd-timeline flex-1" style="padding-left:24px; padding-right:0; width:100%;">
+        <div class="container max-width-lg cd-timeline__container" style="width:100%; margin-right:0; padding-right:0;">
     <div class="cd-timeline__block"> <!-- Block 2: University -->
       <div class="cd-timeline__img cd-timeline__img--picture">
         <img src="SJSU_Seal_San_Jose_State_University.png" alt="Picture">
