@@ -8,6 +8,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Overlay for full-page fade including header */
+        #fade-overlay-full {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 1;
+            transition: opacity 1.5s ease;
+        }
+        #fade-overlay-full.fade-out {
+            opacity: 0;
+        }
         body::before {
             content: '';
             position: fixed;
@@ -32,8 +48,8 @@
             scroll-snap-type: y mandatory;
             
             /* Set the background image and properties */
-            /* background-image: url('https://mandatedmemoranda.com/wp-content/uploads/2013/11/clouds-3_5.jpg'); */
-             background-image: url('StockCake-Sunset above clouds_1754596231.jpg'); 
+            /*  background-image: url('https://mandatedmemoranda.com/wp-content/uploads/2013/11/clouds-3_5.jpg'); */
+            background-image: url('clouds1.jpg'); 
             background-size: cover;
             background-position: center;
             /*background-attachment: fixed;  this is only if no change when scroll*/
@@ -87,6 +103,18 @@
                     } 
             </style>
             <script>
+                // Fade out the full overlay on page load
+                document.addEventListener('DOMContentLoaded', function() {
+                    var overlay = document.getElementById('fade-overlay-full');
+                    if (overlay) {
+                        setTimeout(function() {
+                            overlay.classList.add('fade-out');
+                        }, 300);
+                        setTimeout(function() {
+                            overlay.parentNode.removeChild(overlay);
+                        }, 1800);
+                    }
+                });
                 // Lock scrolling until fade animation ends
                 document.addEventListener('DOMContentLoaded', function() {
                     // Lock scroll and compensate for scrollbar
@@ -107,6 +135,7 @@
             <!-- Removed duplicate/old fade overlay styles -->
             </head>
             <body>
+                <div id="fade-overlay-full"></div>
                     <!-- Header Section - Fixed at the top -->
                 <header class="fixed w-full top-0 left-0 z-80 bg-gradient-to-b from-blue-500 to-transparent text-white">
                         <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center py-4 px-6">
@@ -134,7 +163,7 @@
         <!-- Visual experience Section (will add animation)-->
          <section id="intro" class="min-h-screen flex items-center justify-center">
             <div class="section-content-wrapper p-6">
-                <h2 class="text-6xl typing-text font-semibold text-blue-200 bg-transparent" style="font-family: 'Times New Roman', Times, serif;">
+                <h2 class="text-6xl typing-text font-semibold text-yellow-200 bg-transparent" style="font-family: 'Times New Roman', Times, serif;">
     Welcome to my world...
 </h2>
             </div>
