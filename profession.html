@@ -3,11 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profession</title>
+    <title>Academia</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+      body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 1;
+            animation: fadeBg 5s 3s ease forwards;
+        }
+        @keyframes fadeBg {
+            to { opacity: 0; }
+        }
         body {
             font-family: 'Inter', sans-serif;
             /* Enable smooth scrolling for anchor links */
@@ -15,19 +31,147 @@
 
             /* Set the background image and properties */
             /* background-image: url('https://mandatedmemoranda.com/wp-content/uploads/2013/11/clouds-3_5.jpg');  use as backup*/
-            background-image: url('_DSC2401.jpg');
+            background-image: url('BWbuilding.jpg');
             background-size: cover;
             background-position: center;
             /*background-attachment: fixed; */
         }
+        
         .section-content-wrapper {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 20px 40px; /* 40px left and right */
         }
+        .semi-transparent-box {
+            background-color: rgba(255, 255, 255, 0.70); /* white with 50% opacity */
+            padding: 10px;
+            color: white; /* Text color for readability */
+            
+        }
+        .typing-text {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: .15em solid rgb(0, 0, 0); /* Blinking cursor */
+            animation: 
+                typing 2s steps(40, end),
+                blinking 1s infinite steps(1);
+            display: inline-block; /* <-- Add this line */
+        }
+        .cd-timeline {
+  position: relative;
+  padding: 2em 0;
+  overflow-x: visible;
+  white-space: normal;
+  padding-left: 40px;   /* Add left padding */
+  padding-right: 10px;  /* Reduced right padding to match photo block */
+}
 
-    </style>
+.cd-timeline__container {
+  display: block;
+}
+
+.cd-timeline__block {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2em;
+  width: 85%;
+}
+
+.cd-timeline__img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5em;
+  flex-shrink: 0;
+}
+
+.cd-timeline__img img {
+  width: 60px;
+  height: 60px;
+}
+
+.cd-timeline__content {
+  background: #fff;
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  flex: 1;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+    }
+
+@keyframes blinking {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(0, 0, 0) }
+    }
+
+
+@keyframes cd-bounce-1 {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        }
+    60% {
+        opacity: 1;
+        transform: scale(1.2);
+        }
+    100% {
+        transform: scale(1);    
+        }
+    }
+
+
+
+  </style>
+  <script>
+    // Lock scrolling until fade animation ends (matches index.html)
+    document.addEventListener('DOMContentLoaded', function() {
+      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = 'hidden';
+      var header = document.querySelector('header');
+      if (scrollBarWidth > 0) {
+        document.body.style.paddingRight = scrollBarWidth + 'px';
+        if (header) header.style.paddingRight = scrollBarWidth + 'px';
+      }
+      setTimeout(function() {
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+        if (header) header.style.paddingRight = '';
+      }, 4000); // 1.5s animation + 0.3s delay = 1.8s
+    });
+  </script>
 </head>
+
+<script>
+    function VerticalTimeline( element ) {
+    this.element = element;
+    this.blocks = this.element.getElementsByClassName("cd-timeline__block");
+    this.images = this.element.getElementsByClassName("cd-timeline__img");
+    this.contents = this.element.getElementsByClassName("cd-timeline__content");
+    // ..
+    };
+
+    VerticalTimeline.prototype.showBlocks = function() {
+    var self = this;
+    for( var i = 0; i < this.blocks.length; i++) {
+        (function(i){
+            if( self.contents[i].classList.contains("cd-timeline__content--hidden") && self.blocks[i].getBoundingClientRect().top <= window.innerHeight*self.offset ) {
+                // add bounce-in animation
+                self.images[i].classList.add("cd-timeline__img--bounce-in");
+                self.contents[i].classList.add("cd-timeline__content--bounce-in");
+                self.images[i].classList.remove("cd-timeline__img--hidden");
+                self.contents[i].classList.remove("cd-timeline__content--hidden");
+            }
+        })(i);
+    }
+    };
+</script>
 <body class="bg-gray-100 text-gray-800">
     <section id="intro" class="min-h-screen flex items-center justify-center">
         <div class="section-content-wrapper p-6">
