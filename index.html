@@ -129,7 +129,7 @@
                         document.body.style.overflow = '';
                         document.body.style.paddingRight = '';
                         if (header) header.style.paddingRight = '';
-                    }, 1800); // 1.5s animation + 0.3s delay = 1.8s
+                    }, 2000); // 1.5s animation + 0.3s delay = 1.8s
                 });
             </script>
             <!-- Removed duplicate/old fade overlay styles -->
@@ -172,10 +172,10 @@
         <section id="about" class="min-h-screen flex items-center justify-center">
                         <div class="section-content-wrapper semi-transparent-box p-6 rounded-lg shadow-lg">
                                 <h2 class="text-2xl font-semibold mb-4 text-blue-700">About Me</h2>
-                                                                <div class="flex flex-col md:flex-row gap-8 items-center md:items-start">
-                                                                    <div class="bg-white bg-opacity-80 rounded-lg shadow-lg p-6 max-w-2xl flex-1">
-                                                                        <p class="text-gray-700 leading-relaxed mb-4">
-                                                                            Hello all who visit!<br>
+                                        <div class="flex flex-col md:flex-row gap-8 items-center md:items-start">
+                                            <div class="bg-white bg-opacity-80 rounded-lg shadow-lg p-6 max-w-2xl flex-1">
+                                                 <p class="text-gray-700 leading-relaxed mb-4">
+                                                     Hello all who visit!<br>
                                                                             I am <span class="font-bold text-blue-800">Bartholomew Tran</span>, but you can call be Bart,  and welcome to my world!<br><br>
                                                                             I graduated from San Jose State University with a degree in Management Information Systems, 
                                                                             and I’m passionate about IT, data analytics, and machine learning. I love working with Python (pandas, NumPy, scikit-learn) and MySQL to dig into 
@@ -186,12 +186,13 @@
                                                                             out new tech, building Gunpla, and playing sports like judo, badminton, tennis, and skiing in the winter. I also enjoy playing airsoft whenever I 
                                                                             get the chance.<br>
                                                                             It's nice to meet you all, and I hope we can connect!
-                                                                        </p>
-                                                                        <p class="text-gray-700 leading-relaxed">
-                                                                            You can find more of my work and contributions on my <a href="https://github.com/bartholomewtran" target="_blank" class="text-blue-500 hover:underline font-medium">GitHub profile</a>.
-                                                                            Or, scroll down to learn more in detail! I'm always eager to learn new technologies and collaborate on exciting projects.
-                                                                        </p>
-                                                                    </div>
+                                                </p>
+                                                <p class="text-gray-700 leading-relaxed">
+                                                    You can find more of my work and contributions on my <a href="https://github.com/bartholomewtran" target="_blank" class="text-blue-500 hover:underline font-medium">GitHub profile</a>.
+                                                    Or, scroll down to learn more in detail! I'm always eager to learn new technologies and collaborate on exciting projects.
+                                                </p>
+                        </div>
+                                                <!-- Profile Pictures -->
                                                                                                             <div class="flex flex-col gap-6 items-center">
                                                                                                                 <div class="bg-white bg-opacity-80 rounded-lg shadow-lg p-4 flex-shrink-0 flex items-center justify-center" style="max-width:260px;">
                                                                                                                     <img src="IMG_0712_Copy.jpg" alt="Bartholomew Tran" class="rounded-lg shadow-md w-full h-auto object-cover" style="max-width:220px; max-height:320px;">
@@ -201,6 +202,8 @@
                                                                                                                 </div>
                                                                                                             </div>
                                                                 </div>
+
+                                                <!-- Skills Section --> 
                                 <div class="mt-6">
                                         <h3 class="text-xl font-semibold mb-3 text-green-600">Skills</h3>
                                         <ul class="flex flex-wrap gap-2 text-sm">
@@ -216,7 +219,7 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- subpage menu -->
         <section id="Universes" class="min-h-screen flex items-center justify-center">
             <div class="section-content-wrapper semi-transparent-box rounded-lg">
                 <h2 class="text-2xl font-semibold mb-8 text-purple-700 text-center">My Universes

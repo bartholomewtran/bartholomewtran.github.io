@@ -30,8 +30,8 @@
             scroll-behavior: smooth;
 
             /* Set the background image and properties */
-            /* background-image: url('https://mandatedmemoranda.com/wp-content/uploads/2013/11/clouds-3_5.jpg');  use as backup*/
-            background-image: url('BWbuilding.jpg');
+            
+            background-image: url('shibuyablur.jpg');
             background-size: cover;
             background-position: center;
             /*background-attachment: fixed; */
@@ -57,50 +57,7 @@
                 blinking 1s infinite steps(1);
             display: inline-block; /* <-- Add this line */
         }
-        .cd-timeline {
-  position: relative;
-  padding: 2em 0;
-  overflow-x: visible;
-  white-space: normal;
-  padding-left: 40px;   /* Add left padding */
-  padding-right: 10px;  /* Reduced right padding to match photo block */
-}
-
-.cd-timeline__container {
-  display: block;
-}
-
-.cd-timeline__block {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 2em;
-  width: 85%;
-}
-
-.cd-timeline__img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 0.5em;
-  flex-shrink: 0;
-}
-
-.cd-timeline__img img {
-  width: 60px;
-  height: 60px;
-}
-
-.cd-timeline__content {
-  background: #fff;
-  padding: 1em 2em;
-  border-radius: 0.5em;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  flex: 1;
-}
+        
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
@@ -112,19 +69,36 @@
     }
 
 
-@keyframes cd-bounce-1 {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-        }
-    60% {
-        opacity: 1;
-        transform: scale(1.2);
-        }
-    100% {
-        transform: scale(1);    
-        }
-    }
+/* For expandable boxes */
+
+
+.expandable-content {
+  display: none;
+  padding: 24px 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 0 0 1rem 1rem;
+  min-height: 180px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.expandable-container {
+  margin-bottom: 20px;
+}
+
+.expand-button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.expand-button:hover {
+  background-color: #0056b3;
+}
 
 
 
@@ -145,45 +119,100 @@
         if (header) header.style.paddingRight = '';
       }, 4000); // 1.5s animation + 0.3s delay = 1.8s
     });
+
+    // Expandable boxes functionality
+    document.addEventListener('DOMContentLoaded', function() {
+  const expandButtons = document.querySelectorAll('.expand-button');
+  const allContents = document.querySelectorAll('.expandable-content');
+  expandButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const targetId = this.getAttribute('data-target');
+      allContents.forEach(content => {
+        if (content.id === targetId) {
+          if (content.style.display === 'block') {
+            content.style.display = 'none';
+            button.classList.remove('bg-blue-700');
+          } else {
+            allContents.forEach(c => c.style.display = 'none');
+            expandButtons.forEach(b => b.classList.remove('bg-blue-700'));
+            content.style.display = 'block';
+            button.classList.add('bg-blue-700');
+          }
+        } else {
+          content.style.display = 'none';
+        }
+      });
+    });
+  });
+});
   </script>
 </head>
 
-<script>
-    function VerticalTimeline( element ) {
-    this.element = element;
-    this.blocks = this.element.getElementsByClassName("cd-timeline__block");
-    this.images = this.element.getElementsByClassName("cd-timeline__img");
-    this.contents = this.element.getElementsByClassName("cd-timeline__content");
-    // ..
-    };
 
-    VerticalTimeline.prototype.showBlocks = function() {
-    var self = this;
-    for( var i = 0; i < this.blocks.length; i++) {
-        (function(i){
-            if( self.contents[i].classList.contains("cd-timeline__content--hidden") && self.blocks[i].getBoundingClientRect().top <= window.innerHeight*self.offset ) {
-                // add bounce-in animation
-                self.images[i].classList.add("cd-timeline__img--bounce-in");
-                self.contents[i].classList.add("cd-timeline__content--bounce-in");
-                self.images[i].classList.remove("cd-timeline__img--hidden");
-                self.contents[i].classList.remove("cd-timeline__content--hidden");
-            }
-        })(i);
-    }
-    };
-</script>
 <body class="bg-gray-100 text-gray-800">
     <section id="intro" class="min-h-screen flex items-center justify-center">
-        <div class="section-content-wrapper p-6">
-            <h2 class="text-2xl font-semibold m4 text-blue-300 bg-transparent">Profession</h2>
+            <div class="section-content-wrapper p-6">
+                <h2 class="text-6xl typing-text font-semibold text-green-300 bg-transparent" style="font-family: 'Times New Roman', Times, serif;">
+    Profession
+</h2>
+            </div>
+         </section>
+<section id="about" class="min-h-screen flex items-center justify-center">
+  <div class="section-content-wrapper p-0 md:p-6">
+    <div class="flex flex-col md:flex-row gap-8 items-center md:items-start bg-white bg-opacity-90 rounded-2xl shadow-2xl p-6 md:p-10">
+      <div class="flex-1 w-full">
+        <h2 class="text-2xl font-semibold mb-4 text-blue-700">My Career as of Now</h2>
+        <p class="text-gray-800 leading-relaxed mb-4">
+          My career has been filled with variety and growth. From my first internship to my current role, I have worked in 3 different industries
+          and learned many valuable skills for all my positions.
+          <br><br>
+          Below, you can see my journey through different roles and industries. Each step has contributed to my development as a professional, 
+          and I'm excited to continue growing and taking on new challenges in the future.
+          <br><br>
+          Whatever is in for me for the future, I'm sure I will continue to learn even more.
+        </p>
+        
+        <!-- Expandable boxes row -->
+         <h3 class="text-1xl font-semibold mb-4 text-blue-700">Click to expand</h3>
+<div class="flex gap-4 w-full mb-2" id="expandable-row">
+  <button class="expand-button flex-1 w-full text-left" data-target="content-1">Security</button>
+  <button class="expand-button flex-1 w-full text-left" data-target="content-2">IT Technician</button>
+  <button class="expand-button flex-1 w-full text-left" data-target="content-3">Tax</button>
+</div>
+<div id="expandable-contents" class="w-full">
+  <div class="expandable-content" id="content-1">
+    <h2>Allied Universal Security Services</h2>
+    <ul>
+      <li>Role: Security Officer</li>
+      <li>Duration: 2023 - Present</li>
+      <li>Responsibilities:
+        <ul>
+          <li>- Monitoring and securing premises</li>
+          <li>- Conducting regular patrols</li>
+          <li>- Responding to incidents and emergencies</li>
+          <li>- Watching CCTVs and ensuring all activities are recorded</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="expandable-content" id="content-2">
+    <h2>IT Technician</h2>
+    <p>This is the content for Box 2. Add more details, skills, or anything you want to highlight.</p>
+  </div>
+  <div class="expandable-content" id="content-3">
+    <h2>Tax</h2>
+    <p>This is the content for Box 3. You can use this for awards, testimonials, or other info.</p>
+  </div>
+</div>
+      </div>
+      <div class="flex-shrink-0 flex items-center justify-center mt-6 md:mt-0">
+        <div class="bg-white bg-opacity-80 rounded-lg shadow-lg p-4" style="max-width:260px;">
+          <img src="IMG_0712_Copy.jpg" alt="Bartholomew Tran" class="rounded-lg shadow-md w-full h-auto object-cover" style="max-width:220px; max-height:320px;">
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
 
-    <section id="academia" class="min-h-screen flex items-center justify-center">
-        <div class="section-content-wrapper p-6 rounded-lg shadow-lg">
-            <h2 class="text-4xl font-semibold text-blue-100 bg-transparent">My Professional Career</h2>
-            <p class="mt-4 text-lg">This section is under construction. Stay tuned for updates!</p>
-        </div>
-    </section>
+
 </body>
 </html>
