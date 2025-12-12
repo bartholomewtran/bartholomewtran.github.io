@@ -101,6 +101,18 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   flex: 1;
 }
+    /* Collapsible details for timeline entries */
+    .collapse-btn {
+      background: transparent;
+      border: 1px solid rgba(2,6,23,0.06);
+      padding: 6px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      float: right;
+    }
+    .collapsible-content { overflow: hidden; max-height: 0; transition: max-height 320ms ease; }
+    .cd-timeline__content .meta-row { display:flex; justify-content:space-between; align-items:center; gap:12px; }
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
@@ -178,7 +190,7 @@
 
   <section id="intro" class="min-h-screen flex flex-col items-center justify-center">
     <div class="section-content-wrapper p-6">
-      <h2 class="text-5xl font-semibold m4 text-yellow-300 bg-transparent typing-text" style="font-family: 'Times New Roman', Times, serif;">
+      <h2 class="text-5xl font-semibold m4 text-black-300 bg-transparent typing-text" style="font-family: 'Times New Roman', Times, serif;">
         Academia
       </h2>
     </div>
@@ -196,7 +208,7 @@
       <!-- Photo/intro block -->
   <div class="section-content-wrapper p-8 rounded-lg shadow-lg semi-transparent-box max-w-xl flex-shrink-0" style="margin-top:2em; padding-left:40px; padding-right:40px; height:fit-content; display:flex; flex-direction:column; justify-content:flex-start;">
         <h2 class="text-4xl font-semibold text-black bg-transparent">My Academic Journey</h2>
-        <p class="mt-4 text-lg text-black">Here's a timeline of my educational background and achievements.</p>
+        <!--<p class="mt-4 text-lg text-black">Here's a timeline of my educational background and achievements.</p> -->
         <img src="graduation.jpeg" alt="Graduation" class="mt-5 mb-0 rounded-lg shadow-lg">
       </div>
       <!-- Timeline block -->
@@ -210,18 +222,21 @@
       <div class="cd-timeline__content text-component">
         <h>San Jose State University</h>
         
-        <div class="flex justify-between items-center">
+        <div class="meta-row">
           <span class="cd-timeline__date">August 2022 - May 2024</span>
-          <!--<a href="#0" class="btn btn--subtle">Read more</a> --> 
+          <button class="collapse-btn" aria-expanded="false">Show details</button>
         </div>
-        <p class="text-gray-700 leading-relaxed mb-4">The ending of a chapter, and the beginning of another.</p>
-        <h3> Educational milestones</h3>
-        <ul class="list-disc pl-6">
-            <li>Graduated with a GPA of 3.67.</li>
-            <li>Obtained an Bachelors of Science in Management Information Systems.</li>
-            <li>Learned technical skills like data analytics, programming, and software development. </li>
-            <li>Practiced development concepts like Agile methodologies and SCRUM.</li>
-            <li>Explored cloud computing, IT, and machine-learning.</li>
+        <div class="collapsible-content">
+          <p class="text-gray-700 leading-relaxed mb-4">The ending of a chapter, and the beginning of another.</p>
+          <h3> Educational milestones</h3>
+          <ul class="list-disc pl-6">
+              <li>Graduated with a GPA of 3.67.</li>
+              <li>Obtained an Bachelors of Science in Management Information Systems.</li>
+              <li>Learned technical skills like data analytics, programming, and software development. </li>
+              <li>Practiced development concepts like Agile methodologies and SCRUM.</li>
+              <li>Explored cloud computing, IT, and machine-learning.</li>
+          </ul>
+        </div>
       </div> <!-- cd-timeline__content -->
     </div> <!-- End CC block -->
 
@@ -234,19 +249,22 @@
       <div class="cd-timeline__content text-component">
         <h>Community College: Mission College</h>
         
-        <div class="flex justify-between items-center">
+        <div class="meta-row">
           <span class="cd-timeline__date">August 2020 - May 2022</span>
-          <!--<a href="#0" class="btn btn--subtle">Read more</a> --> 
+          <button class="collapse-btn" aria-expanded="false">Show details</button>
         </div>
-        <p class="text-gray-700 leading-relaxed mb-4">Thus started my higher-education career.</p>
-        <h3> Educational milestones</h3>
-        <ul class="list-disc pl-6">
-            <li>Graduated with a GPA of 3.93</li>
-            <li>Obtained an Associates of Science for Transfer (AS-T) in Business Administration</li>
-            <li>Obtained a minor in economics</li>
-            <li>Learned business concepts like accounting, business law, and management </li>
-            <li>Learned technical skills like MySQL and Python</li>
-            <li>Studied Microsoft Excel in-depth</li>
+        <div class="collapsible-content">
+          <p class="text-gray-700 leading-relaxed mb-4">Thus started my higher-education career.</p>
+          <h3> Educational milestones</h3>
+          <ul class="list-disc pl-6">
+              <li>Graduated with a GPA of 3.93</li>
+              <li>Obtained an Associates of Science for Transfer (AS-T) in Business Administration</li>
+              <li>Obtained a minor in economics</li>
+              <li>Learned business concepts like accounting, business law, and management </li>
+              <li>Learned technical skills like MySQL and Python</li>
+              <li>Studied Microsoft Excel in-depth</li>
+          </ul>
+        </div>
       </div> <!-- cd-timeline__content -->
     </div> <!-- End CC block -->
 
@@ -259,18 +277,21 @@
       <div class="cd-timeline__content text-component">
         <h>High School: Santa Teresa High School (STHS)</h>
         
-        <div class="flex justify-between items-center">
+        <div class="meta-row">
           <span class="cd-timeline__date">August 2016 - June 2020</span>
-          <!--<a href="#0" class="btn btn--subtle">Read more</a> --> 
+          <button class="collapse-btn" aria-expanded="false">Show details</button>
         </div>
-        <p class="text-gray-700 leading-relaxed mb-4">Embarked on pathway to STEM.</p>
-        <h3> Educational milestones</h3>
-        <ul class="list-disc pl-6">
-            <li>Graduated with a GPA of 3.65</li>
-            <li>Completed AP Physics 1 and 2</li>
-            <li>Completed AP Calculus AB and AP Calculus BC</li>
-            <li>Member of the mechanical team of STHS Robotics </li>
-            <li>Member of the STMESA (Santa Teresa Math Engineering Science Achievement)</li>
+        <div class="collapsible-content">
+          <p class="text-gray-700 leading-relaxed mb-4">Embarked on pathway to STEM.</p>
+          <h3> Educational milestones</h3>
+          <ul class="list-disc pl-6">
+              <li>Graduated with a GPA of 3.65</li>
+              <li>Completed AP Physics 1 and 2</li>
+              <li>Completed AP Calculus AB and AP Calculus BC</li>
+              <li>Member of the mechanical team of STHS Robotics </li>
+              <li>Member of the STMESA (Santa Teresa Math Engineering Science Achievement)</li>
+          </ul>
+        </div>
       </div> <!-- cd-timeline__content -->
   </div><!-- End High School block -->
 </section> <!-- cd-timeline -->
@@ -282,5 +303,27 @@
       academiaSection.scrollIntoView({ behavior: 'smooth' });
     }
   }
+</script>
+<script>
+  // Collapse toggle for timeline entries
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.collapse-btn').forEach(function(btn){
+      const content = btn.closest('.cd-timeline__content').querySelector('.collapsible-content');
+      if (!content) return;
+      // init collapsed
+      content.style.maxHeight = '0px';
+      content.style.overflow = 'hidden';
+      btn.addEventListener('click', function(){
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        btn.textContent = expanded ? 'Show details' : 'Hide details';
+        if (!expanded) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          content.style.maxHeight = '0px';
+        }
+      });
+    });
+  });
 </script>
 </html>
